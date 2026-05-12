@@ -387,6 +387,14 @@ def not_found(e):
 def server_error(e):
     return jsonify({'error': 'Internal server error', 'success': False}), 500
 
+# =============================================
+# Database Initialize (ADD THIS)
+# =============================================
+with app.app_context():
+    init_db()
+    print("[OK] Database initialized successfully")
+    
+
 # ------------------------------------------------------------------
 # Run
 # ------------------------------------------------------------------
